@@ -20,3 +20,11 @@ class PostAdmin(admin.ModelAdmin):
     class Meta:
         model = Post
 
+
+@admin.register(Tag)
+class TagAdmin(admin.ModelAdmin):
+    list_display = ['title', 'slug']
+    prepopulated_fields = {'slug': ('title',)}
+
+    class Meta:
+        model = Tag
