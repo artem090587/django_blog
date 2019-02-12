@@ -62,10 +62,6 @@ class Comment(models.Model):
     pass
 
 
-class MainMenu(models.Model):
-    pass
-
-
 class Sort(models.Model):
     pass
 
