@@ -1,10 +1,7 @@
-{% load staticfiles %}
+{% extends "blog/base.html"%}
 
-<!doctype html>
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>{% block title %}{% endblock %} | DJANGO</title>
-</head>
+{% block content %}
+<div>
+    <h2>My first App!</h2>
+</div>
+{% endblock content %}
