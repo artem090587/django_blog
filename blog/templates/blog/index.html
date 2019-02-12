@@ -4,4 +4,9 @@
 <div>
     <h2>My first App!</h2>
 </div>
+<div clsass="posts">
+    {% for post in posts %}
+        {{ post }}
+    {% endfor %}
+</div>
 {% endblock content %}
