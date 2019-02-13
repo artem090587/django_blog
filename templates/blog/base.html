@@ -11,11 +11,7 @@
     <link rel="stylesheet" href="{% static 'css/blog.css' %}" />
 </head>
 <body>
-<nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">
-    <img src="{% static 'images/logo.png' %}" width="30" height="30" alt="logo">
-  </a>
-</nav>
+{% include 'blog/navbar.html' %}
 <main role="main">
 <div class="jumbotron">
     <div class="container-fluid">
