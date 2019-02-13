@@ -46,8 +46,12 @@ class Post(models.Model):
         self.published_date = timezone.now()
         self.save()
 
+    # def get_absolute_url(self):
+    #     return reverse("post_detail_url", kwargs={"slug": self.slug})
+
     def get_absolute_url(self):
-        return reverse("post_detail_url", kwargs={"slug": self.slug})
+        return "/%i/" % self.id
+        
 
     class Meta:
         verbose_name = 'Статья'
