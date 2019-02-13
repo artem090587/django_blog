@@ -38,6 +38,7 @@ class Post(models.Model):
     publishTrue = models.BooleanField(default=True, db_index=True, verbose_name=_('Publish'))
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     def __str__(self):
         return '{}'.format(self.title)
