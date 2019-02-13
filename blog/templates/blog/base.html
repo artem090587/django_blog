@@ -5,23 +5,28 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"/>
-    <title>{% block title %}{% endblock %} | DJANGO</title>
+    <title>{% block title %}{% endblock %} DJANGO</title>
     {# Styles go here #}
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
 </head>
 <body>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-8">
+            <h1>Welcome to my first Django project!</h1>
 
-<h1>Welcome to my first Django project!</h1>
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <div class="brand">My Blog</div>
-            <ul class="nav">
-                <li><a href="{% url 'list' %}" class="">Список постов</a></li>
-            </ul>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <div class="brand">My Blog</div>
+                        <ul class="nav">
+                            <li><a href="{% url 'list' %}" class="">Список постов</a></li>
+                        </ul>
+                </div>
+            </div>
+        </div>
         </div>
     </div>
-
 </div>
 
 <div class="container">
