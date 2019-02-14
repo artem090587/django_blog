@@ -13,20 +13,12 @@
 <body>
 {% include 'blog/navbar.html' %}
 <main role="main">
-<div class="jumbotron">
-    <div class="container-fluid">
-        <h1 class="display-4">Fluid jumbotron</h1>
-        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-        <ul class="nav">
-            <li><a href="{% url 'list' %}" class="">Список постов</a></li>
-        </ul>
-    </div>
-</div>
+{% include 'blog/header.html' %}
 
 <div class="container">
     {% block content %} Empty page {% endblock %}
 </div>
-</div>
+</main>
 {% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> {% endcomment %}
 <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
 </body>
