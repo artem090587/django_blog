@@ -1,2 +1,13 @@
-.card {display: inline-block; margin-top: 5%;}
+.card {display: inline-block;}
 .page-container {max-width: 1350px;}
+
+.container {
+    margin-top: 8%;
+    margin-left: 8%;
+}
+
+.card:hover{
+    -webkit-box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
+    box-shadow: -1px 9px 40px -12px rgba(0,0,blue,alpha);
+}
