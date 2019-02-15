@@ -2,9 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from blog.models import Post 
 from django.views.generic import ListView, DetailView
-
-# def index(request):
-#     return HttpResponse('<h3>Hello from Django!</h3>')
+from blog.models import Category
 
 # def index(request):
 #     if request.method == 'GET':
