@@ -27,6 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# DEBUG = False
+# TEMPLATE_DEBUG = DEBUG
+# ALLOWED_HOSTS = ['localhost']  #provide your host name
+
 
 # Application definition
 
