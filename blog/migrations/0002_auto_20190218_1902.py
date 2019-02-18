@@ -11,9 +11,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.DeleteModel(
-            name='MainMenu',
-        ),
         migrations.AddField(
             model_name='post',
             name='category',
