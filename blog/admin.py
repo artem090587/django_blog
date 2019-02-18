@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Category, Post, Tag
+from .models import Category, Post, Tag, Comment
 
 
 @admin.register(Category)
@@ -28,3 +28,11 @@ class TagAdmin(admin.ModelAdmin):
 
     class Meta:
         model = Tag
+
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ['post', 'author', 'text', 'created_date']
+
+    class Meta:
+        model = Comment
