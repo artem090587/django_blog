@@ -1,3 +1,17 @@
 .comment {
     margin: 30px 0px 30px 30px;
 }
+.card {
+    display: inline-block;
+    width: 15rem;
+    margin: 5% 0% 10% 0%;
+}
+.footer {
+    display: block;
+    background-color: #333;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.content {
+    color: #eee;
+}
