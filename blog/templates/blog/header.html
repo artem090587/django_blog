@@ -1,9 +1,260 @@
-<div class="jumbotron">
-    <div class="container-fluid">
-        <h1 class="display-4">Fluid jumbotron</h1>
-        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-        <ul class="nav">
-            <li><a href="{% url 'blog:posts-list' %}" class="">Список постов</a></li>
+{% load static %}
+<header>
+    <!-- tt-mobile menu -->
+    <nav class="panel-menu mobile-main-menu">
+        <ul>
+            <li>
+                <a href="/">HOME</a>
+            </li>
+            <li>
+                <a href="listing-left-column.html">SHOP</a>
+            </li>
+            <li>
+                <a href="blog-listing-without-col.html">BLOG</a>
+            </li>
+            <li>
+                <a href="portfolio-col-grid-four.html">PORTFOLIO</a>
+            </li>
+            <li>
+                <a href="about.html">PAGES</a>
+            </li>
+            <li>
+                <a href="listing-left-column.html">WOMEN</a>
+            </li>
+            <li>
+                <a href="listing-right-column.html">MEN</a>
+            </li>
         </ul>
+        <div class="mm-navbtn-names">
+            <div class="mm-closebtn">Close</div>
+            <div class="mm-backbtn">Back</div>
+        </div>
+    </nav>
+    <!-- tt-mobile-header -->
+    <div class="tt-mobile-header">
+        <div class="container-fluid">
+            <div class="tt-header-row">
+                <div class="tt-mobile-parent-menu">
+                    <div class="tt-menu-toggle">
+                        <i class="icon-03"></i>
+                    </div>
+                </div>
+                <!-- search -->
+                <div class="tt-mobile-parent-search tt-parent-box"></div>
+                <!-- /search -->
+                <!-- cart -->
+                <div class="tt-mobile-parent-cart tt-parent-box"></div>
+                <!-- /cart -->
+                <!-- account -->
+                <div class="tt-mobile-parent-account tt-parent-box"></div>
+                <!-- /account -->
+                <!-- currency -->
+                <div class="tt-mobile-parent-multi tt-parent-box"></div>
+                <!-- /currency -->
+            </div>
+        </div>
+        <div class="container-fluid tt-top-line">
+            <div class="row">
+                <div class="tt-logo-container">
+                    <!-- mobile logo -->
+                    <a class="tt-logo tt-logo-alignment" href="/"><img src="{% static 'images/logo.png' %}" alt=""></a>
+                    <!-- /mobile logo -->
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+    <!-- tt-desktop-header -->
+    <div class="tt-desktop-header">
+        <div class="container">
+            <div class="tt-header-holder">
+                <div class="tt-col-obj tt-obj-logo">
+                    <!-- logo -->
+                    <a class="tt-logo tt-logo-alignment" href="/"><img src="{% static 'images/logo.png' %}" alt=""></a>
+                    <!-- /logo -->
+                </div>
+                <div class="tt-col-obj tt-obj-menu">
+                    <!-- tt-menu -->
+                    <div class="tt-desctop-parent-menu tt-parent-box">
+                        <div class="tt-desctop-menu">
+                            <nav>
+                                <ul>
+                                    <li class="dropdown tt-megamenu-col-02 selected">
+                                        <a href="/">HOME</a>
+                                    </li>
+                                    <li class="dropdown megamenu">
+                                        <a href="listing-collection.html">SHOP</a>
+                                    </li>
+                                    <li class="dropdown tt-megamenu-col-01">
+                                        <a href="blog-listing-without-col.html">BLOG</a>
+                                    </li>
+                                    <li class="dropdown tt-megamenu-col-01">
+                                        <a href="portfolio-col-wide-four.html">PORTFOLIO</a>
+                                    </li>
+                                    <li class="dropdown tt-megamenu-col-01">
+                                        <a href="about.html">PAGES</a>
+                                    </li>
+                                    <li class="dropdown megamenu">
+                                        <a href="listing-left-column.html">WOMEN</a>
+                                    </li>
+                                    <li class="dropdown megamenu">
+                                        <a href="listing-right-column.html">MEN</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <!-- /tt-menu -->
+                </div>
+                <div class="tt-col-obj tt-obj-options obj-move-right">
+                    <!-- tt-search -->
+                    <div class="tt-desctop-parent-search tt-parent-box">
+                        <div class="tt-search tt-dropdown-obj">
+                            <button class="tt-dropdown-toggle" data-tooltip="Поиск" data-tposition="bottom">
+                                <i class="icon-f-85"></i>
+                            </button>
+                            <div class="tt-dropdown-menu">
+                                <div class="container">
+                                    <form>
+                                        <div class="tt-col">
+                                            <input type="text" class="tt-search-input" placeholder="Искать...">
+                                            <button class="tt-btn-search" type="submit"></button>
+                                        </div>
+                                        <div class="tt-col">
+                                            <button class="tt-btn-close icon-g-80"></button>
+                                        </div>
+                                        <div class="tt-info-text">
+                                            Что нужно найти?
+                                        </div>
+                                        <div class="search-results">
+                                            <ul>
+                                                <li>
+                                                    <a href="product.html">
+                                                        <div class="thumbnail"><img src="{% static 'images/loader.svg' %}" data-src="{% static 'images/product/product-03.jpg' %}" alt=""></div>
+                                                        <div class="tt-description">
+                                                            <div class="tt-title">Flared Shift Bag</div>
+                                                            <div class="tt-price">
+                                                                <span class="new-price">$14</span>
+                                                                <span class="old-price">$24</span>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                   <a href="product.html">
+                                                        <div class="thumbnail"><img src="{% static 'images/loader.svg' %}" data-src="{% static 'images/product/product-02.jpg' %}" alt=""></div>
+                                                        <div class="tt-description">
+                                                            <div class="tt-title">Flared Shift Bag</div>
+                                                            <div class="tt-price">
+                                                                $24
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                   <a href="product.html">
+                                                        <div class="thumbnail"><img src="{% static 'images/loader.svg' %}" data-src="{% static 'images/product/product-01.jpg' %}" alt=""></div>
+                                                        <div class="tt-description">
+                                                            <div class="tt-title">Flared Shift Bag</div>
+                                                            <div class="tt-price">
+                                                                $14
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                   <a href="product.html">
+                                                        <div class="thumbnail"><img src="{% static 'images/loader.svg' %}" data-src="{% static 'images/product/product-04.jpg' %}" alt=""></div>
+                                                        <div class="tt-description">
+                                                            <div class="tt-title">Flared Shift Bag</div>
+                                                            <div class="tt-price">
+                                                                $24
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                   <a href="product.html">
+                                                        <div class="thumbnail"><img src="{% static 'images/loader.svg' %}" data-src="{% static 'images/product/product-05.jpg' %}" alt=""></div>
+                                                        <div class="tt-description">
+                                                            <div class="tt-title">Flared Shift Bag</div>
+                                                            <div class="tt-price">
+                                                                $17
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                   <a href="product.html">
+                                                        <div class="thumbnail"><img src="{% static 'images/loader.svg' %}" data-src="{% static 'images/product/product-06.jpg' %}" alt=""></div>
+                                                        <div class="tt-description">
+                                                            <div class="tt-title">Flared Shift Bag</div>
+                                                            <div class="tt-price">
+                                                                $20
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <button type="button" class="tt-view-all">View all products</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /tt-search --  >
+                    <!-- tt-account -->
+                    <div class="tt-desctop-parent-account tt-parent-box">
+                        <div class="tt-account tt-dropdown-obj">
+                            <button class="tt-dropdown-toggle"  data-tooltip="Аккаунт" data-tposition="bottom"><i class="icon-f-94"></i></button>
+                            <div class="tt-dropdown-menu">
+                                <div class="tt-mobile-add">
+                               </div>
+                                <div class="tt-dropdown-inner">
+                                    <ul>
+                                        <li><a href="login.html"><i class="icon-f-94"></i>Войти</a></li>
+                                        <li><a href="create-account.html"><i class="icon-f-94"></i>Регистрация</a></li>
+                                        <li><a href="wishlist.html"><i class="icon-n-072"></i>Избранное</a></li>
+                                        <li><a href="page404.html"><i class="icon-f-77"></i>Выйти</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /tt-account -->
+                    <!-- tt-langue and tt-currency -->
+                    <div class="tt-desctop-parent-multi tt-parent-box">
+                        <div class="tt-multi-obj tt-dropdown-obj">
+                            <button class="tt-dropdown-toggle" data-tooltip="Язык" data-tposition="bottom"><i class="icon-f-79"></i></button>
+                            <div class="tt-dropdown-menu">
+                                <div class="tt-mobile-add">
+                                    <button class="tt-close">Закрыть</button>
+                                </div>
+                                <div class="tt-dropdown-inner">
+                                    <ul>
+                                        <li class="active"><a href="#">Русский</a></li>
+                                        <li><a href="#">Украинский</a></li>
+                                        <li><a href="#">English</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /tt-langue and tt-currency -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- stuck nav -->
+    <div class="tt-stuck-nav">
+        <div class="container">
+            <div class="tt-header-row ">
+                <div class="tt-stuck-parent-menu"></div>
+                <div class="tt-stuck-parent-search tt-parent-box"></div>
+                <div class="tt-stuck-parent-cart tt-parent-box"></div>
+                <div class="tt-stuck-parent-account tt-parent-box"></div>
+                <div class="tt-stuck-parent-multi tt-parent-box"></div>
+            </div>
+        </div>
+    </div>
+</header>

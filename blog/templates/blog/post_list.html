@@ -1,18 +1,49 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
-    {% for post in object_list %}
+<div id="tt-pageContent">
+    <div class="container-indent">
+        <div class="container">
+            <h1 class="tt-title-subpages noborder">THE BLOG</h1>
+            <div class="tt-blog-masonry">
+                <div class="tt-filter-nav">
+                    <div class="button active" data-filter="*">ALL</div>
+                    <div class="button" data-filter=".sort-value-01">PYTHON</div>
+                    <div class="button" data-filter=".sort-value-02">JAVASCRIPT</div>
+                    <div class="button" data-filter=".sort-value-03">PHP </div>
+                    <div class="button" data-filter=".sort-value-04">HTML &amp; CSS</div>
+                </div>
+                <div class="tt-blog-init tt-grid-col-3 tt-layout-01-post tt-add-item">
 
-            <div class="card">
-            {% load static %}
-                <img src="{% static 'images/3.png' %}" alt="Card Two" class="card-img-top">
-            <div class="card-body">
-                <h5 class="card-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h5>
-                <p class="card-text">{{ post.description }}</p>
-                <a href="{{ post.get_absolute_url }}" class="btn btn-secondary btn-block">Читать</a>
-            </div>
-            </div>
+                    {% for post in object_list %}
 
+                <div class="element-item sort-value-01">
+                    <div class="tt-post">
+                        <div class="tt-post-img">
+                            <a href="{{ post.get_absolute_url }}"><img src="{% static 'images/blog/masonry/masonry-img-01.jpg' %}" alt=""></a>
+                        </div>
+                        <div class="tt-post-content">
+                            <div class="tt-background"></div>
+                                    <div class="tt-tag"><a href="#">FASHION</a></div>
+                                    <h2 class="tt-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+                                    <div class="tt-description">{{ post.description }}</div>
+                                    <div class="tt-meta">
+                                        <div class="tt-autor">
+                                            by <span>ADRIAN</span> on January 14, 2017
+                                        </div>
+                                        <div class="tt-comments">
+                                            <a href="#"><i class="tt-icon icon-f-88"></i>7</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     {% empty %}
         <p>Нет постов</p>
     {% endfor %}
