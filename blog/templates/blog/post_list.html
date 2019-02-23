@@ -24,7 +24,7 @@
                             </div>
                             <div class="tt-post-content">
                                 <div class="tt-background"></div>
-                                <div class="tt-tag"><a href="#">PYTHON</a></div>
+                                <div class="tt-tag"><a href="{{ tag.get_absolute_url }}">{{ post.tags }}</a></div>
                                     <h2 class="tt-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
                                 <div class="tt-description">{{ post.description }}</div>
                                 <div class="tt-meta">
@@ -34,8 +34,6 @@
                             </div>
                         </div>
                     </div>
-            {% empty %}
-                <p>Нет постов</p>
             {% endfor %}
                 </div>
             </div>
