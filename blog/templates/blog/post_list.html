@@ -8,7 +8,7 @@
                 <img src="{% static 'images/3.png' %}" alt="Card Two" class="card-img-top">
             <div class="card-body">
                 <h5 class="card-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h5>
-                <p class="card-text">{{ post.content }}</p>
+                <p class="card-text">{{ post.description }}</p>
                 <a href="{{ post.get_absolute_url }}" class="btn btn-secondary btn-block">Читать</a>
             </div>
             </div>
