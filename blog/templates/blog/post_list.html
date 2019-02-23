@@ -13,39 +13,33 @@
                     <div class="button" data-filter=".sort-value-03">PHP </div>
                     <div class="button" data-filter=".sort-value-04">HTML &amp; CSS</div>
                 </div>
-                <div class="tt-blog-init tt-grid-col-3 tt-layout-01-post tt-add-item">
-
-                    {% for post in object_list %}
-
-                <div class="element-item sort-value-01">
-                    <div class="tt-post">
-                        <div class="tt-post-img">
-                            <a href="{{ post.get_absolute_url }}"><img src="{% static 'images/blog/masonry/masonry-img-01.jpg' %}" alt=""></a>
-                        </div>
-                        <div class="tt-post-content">
-                            <div class="tt-background"></div>
-                                    <div class="tt-tag"><a href="#">FASHION</a></div>
+        <div class="tt-blog-init tt-grid-col-3 tt-layout-01-post tt-add-item">
+            {% for post in object_list %}
+                    <div class="element-item sort-value-01">
+                        <div class="tt-post">
+                            <div class="tt-post-img">
+                                <a href="{{ post.get_absolute_url }}">
+                                    <img src="{% static 'images/blog/masonry/masonry-img-01.jpg' %}" alt="">
+                                </a>
+                            </div>
+                            <div class="tt-post-content">
+                                <div class="tt-background"></div>
+                                <div class="tt-tag"><a href="#">PYTHON</a></div>
                                     <h2 class="tt-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
-                                    <div class="tt-description">{{ post.description }}</div>
-                                    <div class="tt-meta">
-                                        <div class="tt-autor">
-                                            by <span>ADRIAN</span> on January 14, 2017
-                                        </div>
-                                        <div class="tt-comments">
-                                            <a href="#"><i class="tt-icon icon-f-88"></i>7</a>
-                                        </div>
-                                    </div>
+                                <div class="tt-description">{{ post.description }}</div>
+                                <div class="tt-meta">
+                                    <div class="tt-autor">{{ post.created }}</div>
+                                    <div class="tt-comments"><a href="#"><i class="tt-icon icon-f-88"></i>7</a></div>
                                 </div>
                             </div>
                         </div>
                     </div>
+            {% empty %}
+                <p>Нет постов</p>
+            {% endfor %}
                 </div>
             </div>
         </div>
     </div>
 </div>
-    {% empty %}
-        <p>Нет постов</p>
-    {% endfor %}
-
 {% endblock %}
