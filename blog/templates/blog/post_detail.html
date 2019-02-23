@@ -1,10 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <p>{{ post.published_date }}</p>
-    <h2>{{ post.title }}</h2>
-    <p>{{ post.text }}</p>
-    <hr>
+
+<div id="tt-pageContent">
+	<div class="container-indent">
+		<div class="container container-fluid-custom-mobile-padding">
+			<div class="row justify-content-center">
+				<div class="col-xs-12 col-md-10 col-lg-8 col-md-auto">
+
+                    <p>{{ post.published_date }}</p>
+                    <h2>{{ post.title }}</h2>
+                    <p>{{ post.text }}</p>
+                    <hr>
+
 {% for comment in post.comments.all %}
     {% if user.is_authenticated or comment.approved_comment %}
     <div class="comment">
@@ -23,5 +31,9 @@
     <p>Здесь комментариев ещё нет :(</p>
 {% endfor %}
     <a class="btn btn-primary" href="{% url 'blog:add_comment_to_post' pk=post.pk %}">Добавить комментарий</a>
-<hr>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
