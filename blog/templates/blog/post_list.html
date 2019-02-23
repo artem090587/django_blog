@@ -24,7 +24,9 @@
                             </div>
                             <div class="tt-post-content">
                                 <div class="tt-background"></div>
-                                <div class="tt-tag"><a href="{{ tag.get_absolute_url }}">{{ post.tags }}</a></div>
+                                <div class="tt-tag">
+                                    {% for tag in post.tags.all %}<a href="/tag/{{tag.id}}"> {{tag}}</a>{% if not forloop.last %}, {% endif %}{% endfor %}
+                                </div>
                                     <h2 class="tt-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
                                 <div class="tt-description">{{ post.description }}</div>
                                 <div class="tt-meta">

@@ -43,6 +43,7 @@ class Post(models.Model):
     updated = models.DateTimeField(auto_now=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     description = models.CharField('Краткое описание', max_length=250, blank=True)
+    image = models.ImageField(upload_to='static/images/custom', null=True, blank=True)
 
     def __str__(self):
         return '{}'.format(self.title)
