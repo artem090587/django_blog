@@ -4,7 +4,8 @@
     <nav class="panel-menu mobile-main-menu">
         <ul>
             <li>
-                <a href="/">HOME</a>
+                <a class="button {% if view.kwargs.slug == 'all' %}active{% endif %}"
+                       href="{% url 'blog:posts-list' 'all' %}" >HOME</a>
             </li>
             <li>
                 <a href="listing-left-column.html">SHOP</a>
@@ -79,7 +80,8 @@
                             <nav>
                                 <ul>
                                     <li class="dropdown tt-megamenu-col-02 selected">
-                                        <a href="/">HOME</a>
+                                        <a class="button {% if view.kwargs.slug == 'all' %}active{% endif %}"
+                                            href="{% url 'blog:posts-list' 'all' %}" >HOME</a>
                                     </li>
                                     <li class="dropdown megamenu">
                                         <a href="listing-collection.html">SHOP</a>

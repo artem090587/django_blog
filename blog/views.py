@@ -2,18 +2,28 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from blog.models import Post, Comment 
 from django.views.generic import ListView, DetailView
-from blog.models import Category
 from .forms import CommentForm
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 
-# def index(request):
-#     if request.method == 'GET':
-#         return render(request, 'blog/index.html', {})
+from .models import Category, Tag
 
 
 class PostsListView(ListView):
+    context_object_name = 'posts'
     model = Post
+    template_name = 'blog/post_list.html'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(PostsListView, self).get_context_data(**kwargs)
+        context['tags'] = Tag.objects.all()
+        return context
+
+    def get_queryset(self):
+        if self.kwargs.get('slug') == 'all':
+            return self.model.objects.filter(publishTrue__exact=True)
+        return self.model.objects.filter(tags__slug=self.kwargs.get('slug'),
+                                         publishTrue__exact=True)
 
 
 class PostDetailView(DetailView):
