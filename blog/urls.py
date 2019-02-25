@@ -8,7 +8,7 @@ app_name = 'blog'
 
 urlpatterns = [
     # url(r'^$', views.index, name='index'),
-    # url(r'^$', PostsListView.as_view(), name='posts-list'),
+    url(r'^$', PostsListView.as_view(), name='posts-list'),
     re_path(r'^(?P<slug>\w+)/$', PostsListView.as_view(), name='posts-list'),
     # url(r'^(?P<pk>\d+)/$', PostDetailView.as_view(), name='post-detail'),
     # path('<int:id>/', PostDetailView.as_view(), name='post-detail'),
