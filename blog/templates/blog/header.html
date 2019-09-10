@@ -8,23 +8,12 @@
                        href="{% url 'blog:posts-list' 'all' %}" >HOME</a>
             </li>
             <li>
-                <a href="listing-left-column.html">SHOP</a>
-            </li>
-            <li>
                 <a href="blog-listing-without-col.html">BLOG</a>
             </li>
             <li>
                 <a href="portfolio-col-grid-four.html">PORTFOLIO</a>
             </li>
-            <li>
-                <a href="about.html">PAGES</a>
-            </li>
-            <li>
-                <a href="listing-left-column.html">WOMEN</a>
-            </li>
-            <li>
-                <a href="listing-right-column.html">MEN</a>
-            </li>
+
         </ul>
         <div class="mm-navbtn-names">
             <div class="mm-closebtn">Close</div>
@@ -58,14 +47,16 @@
             <div class="row">
                 <div class="tt-logo-container">
                     <!-- mobile logo -->
-                    <a class="tt-logo tt-logo-alignment" href="/"><img src="{% static 'images/logo.png' %}" alt=""></a>
+                    <a class="tt-logo {% if view.kwargs.slug == 'all' %} tt-logo-alignment {% endif %}" href="{% url 'blog:posts-list' 'all' %}">
+                        <img src="{% static 'images/logo.png' %}" alt="">
+                    </a>
                     <!-- /mobile logo -->
                 </div>
             </div>
         </div>
     </div>
     <!-- tt-desktop-header -->
-    <div class="tt-desktop-header">
+    <div class="tt-desktop-header bg-example siimple--bg-light">
         <div class="container">
             <div class="tt-header-holder">
                 <div class="tt-col-obj tt-obj-logo">
@@ -88,18 +79,6 @@
                                     </li>
                                     <li class="dropdown tt-megamenu-col-01">
                                         <a href="blog-listing-without-col.html">BLOG</a>
-                                    </li>
-                                    <li class="dropdown tt-megamenu-col-01">
-                                        <a href="portfolio-col-wide-four.html">PORTFOLIO</a>
-                                    </li>
-                                    <li class="dropdown tt-megamenu-col-01">
-                                        <a href="about.html">PAGES</a>
-                                    </li>
-                                    <li class="dropdown megamenu">
-                                        <a href="listing-left-column.html">WOMEN</a>
-                                    </li>
-                                    <li class="dropdown megamenu">
-                                        <a href="listing-right-column.html">MEN</a>
                                     </li>
                                 </ul>
                             </nav>

@@ -11486,10 +11486,9 @@ header .container-fluid {
     -ms-flex-align: center;
     align-items: center; }
     .tt-desctop-menu nav > ul > li.dropdown > a {
-      font-family: "Hind", sans-serif;
       font-size: 14px;
       line-height: 1.1;
-      font-weight: 400;
+      font-weight: 600;
       letter-spacing: 0.04em;
       padding: 17px 12px 16px;
       display: -ms-inline-flexbox;
@@ -11725,7 +11724,7 @@ header .container-fluid {
   background: transparent; }
 
 .tt-desctop-menu:not(.tt-hover-02) li.dropdown.selected > a {
-  color: #2879fe;
+  color: #5d5e5f;
   background: transparent; }
 
 .tt-desctop-menu.tt-hover-02 nav > ul li.dropdown > a {
@@ -13469,7 +13468,7 @@ footer {
         footer .tt-color-scheme-01 .tt-social-icon li a:hover {
           color: #191919; }
     footer .tt-color-scheme-02 {
-      background: #2879fe;
+      background: #546778;
       color: #ffffff; }
       footer .tt-color-scheme-02 .tt-list li a,
       footer .tt-color-scheme-02 .tt-mobile-collapse .tt-collapse-content .tt-list li a {
@@ -25508,7 +25507,6 @@ html.touch-device {
   overflow-x: hidden; }
 
 body {
-  font-family: "Hind", sans-serif;
   font-size: 14px;
   line-height: 22px;
   font-weight: 300;
@@ -25538,7 +25536,6 @@ a:focus {
 
 .btn {
   background: #2879fe;
-  font-family: "Hind", sans-serif;
   border: none;
   color: #ffffff;
   font-size: 14px;
@@ -25677,7 +25674,6 @@ button:focus {
   text-decoration: none;
   font-weight: 500;
   letter-spacing: 0.02em;
-  font-family: "Hind", sans-serif;
   -moz-transition: color 0.2s linear;
   -o-transition: color 0.2s linear;
   -webkit-transition: color 0.2s linear;
@@ -25715,7 +25711,6 @@ button:focus {
   text-decoration: none;
   font-weight: 500;
   letter-spacing: 0.04em;
-  font-family: "Hind", sans-serif;
   border-bottom: 1px solid #2879fe;
   transition: all 0.2s linear;
   -ms-transition: all 0.2s linear;
@@ -25776,7 +25771,6 @@ button:focus {
 h1, h2, h3, h4, h5, h6 {
   display: block;
   position: relative;
-  font-family: "Hind", sans-serif;
   color: #191919;
   margin-bottom: 0px; }
   h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -26202,7 +26196,6 @@ input::-ms-clear {
   .tt-blockquote .tt-title {
     font-size: 30px;
     line-height: 40px;
-    font-family: "Hind", sans-serif;
     font-weight: 500;
     font-style: italic;
     color: #191919;
@@ -26259,7 +26252,6 @@ input::-ms-clear {
   .tt-blockquote-02 .tt-title {
     font-size: 30px;
     line-height: 40px;
-    font-family: "Hind", sans-serif;
     font-style: italic;
     font-weight: 500; }
   .tt-blockquote-02 .tt-title-description {
@@ -26290,7 +26282,6 @@ input::-ms-clear {
     color: #191919;
     font-size: 14px;
     line-height: 17px;
-    font-family: "Hind", sans-serif;
     letter-spacing: 0.03em;
     padding: 12px 0 10px; }
   .tt-table-01 thead tr th:first-child {
@@ -26322,7 +26313,6 @@ input::-ms-clear {
     border-top: 1px solid #e9e7e7; }
     .tt-table-02 tbody tr td:first-child {
       color: #191919;
-      font-family: "Hind", sans-serif;
       font-weight: 500;
       letter-spacing: 0.03em;
       padding-right: 10px; }
@@ -26475,7 +26465,6 @@ Content
     line-height: 24px;
     font-weight: 500;
     letter-spacing: 0.04em;
-    font-family: "Hind", sans-serif;
     color: #191919;
     margin: 0px 0 0 0;
     padding: 0; }
@@ -26942,7 +26931,6 @@ textarea:focus:-ms-input-placeholder {
   .form-default .form-group label:not(.error) {
     font-size: 14px;
     color: #191919;
-    font-family: "Hind", sans-serif;
     font-weight: 500;
     padding-bottom: 4px;
     letter-spacing: 0.02em; }
@@ -26952,7 +26940,6 @@ textarea:focus:-ms-input-placeholder {
   font-size: 14px;
   border: 1px solid #f7f8fa;
   padding: 11px 12px 10px 15px;
-  font-family: "Hind", sans-serif;
   box-shadow: none;
   outline: none;
   color: #777777;
@@ -27850,7 +27837,7 @@ input[type=checkbox]:checked ~ label .check {
   font-size: 14px;
   line-height: 1;
   color: #989898;
-  font-family: "Hind", sans-serif; }
+  }
   .tt-slick-quantity .account-number {
     font-size: 20px;
     color: #191919; }
@@ -28310,7 +28297,6 @@ body:not(.touch-device) .arrow-location-center-02.tt-arrow-hover:hover .slick-ar
       .tt-gift-layout .tt-gift-box .tt-description .tt-sum {
         color: #ffffff;
         font-size: 32px;
-        font-family: "Hind", sans-serif;
         position: absolute;
         top: 17px;
         right: 15px;
@@ -28808,7 +28794,6 @@ body:not(.touch-device) .arrow-location-center-02.tt-arrow-hover:hover .slick-ar
     padding-left: 20px; }
   .tt-layout-vertical .tt-title {
     font-size: 14px;
-    font-family: "Hind", sans-serif;
     font-weight: 400;
     color: #191919; }
     .tt-layout-vertical .tt-title a {
@@ -28908,7 +28893,6 @@ body:not(.touch-device) .arrow-location-center-02.tt-arrow-hover:hover .slick-ar
     color: #999999;
     font-size: 14px;
     letter-spacing: 0.02em;
-    font-family: "Hind", sans-serif;
     font-weight: 500;
     -moz-transition: color 0.2s linear;
     -o-transition: color 0.2s linear;
@@ -29009,7 +28993,6 @@ body:not(.touch-device) .arrow-location-center-02.tt-arrow-hover:hover .slick-ar
       font-size: 16px;
       color: #191919;
       font-weight: 500;
-      font-family: "Hind", sans-serif; }
     .tt-content-info .tt-subscription .tt-text-small {
       color: #999999;
       font-size: 12px; }

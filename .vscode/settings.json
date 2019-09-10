@@ -1,8 +1,0 @@
-{
-    "python.pythonPath": "env\\Scripts\\python.exe",
-    "python.linting.pylintEnabled": true,
-    "python.linting.pep8Enabled": false,
-    "python.linting.enabled": true,
-    "python.linting.flake8Enabled": false,
-    "python.linting.banditEnabled": false
-}

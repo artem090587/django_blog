@@ -7,12 +7,15 @@
             <h1 class="tt-title-subpages noborder">THE BLOG</h1>
             <div class="tt-blog-masonry">
                 <div class="tt-filter-nav">
+
                     <a class="button {% if view.kwargs.slug == 'all' %}active{% endif %}"
                        href="{% url 'blog:posts-list' 'all' %}" >ALL</a>
+
                     {% for tag in tags %}
                         <a class="button {% if view.kwargs.slug == tag.slug %}active{% endif %}"
                            href="{% url 'blog:posts-list' tag.slug %}">{{ tag|upper }}</a>
                     {% endfor %}
+                    
 {#                    <div class="button active" data-filter="*">ALL</div>#}
 {#                    <div class="button" data-filter=".sort-value-01">PYTHON</div>#}
 {#                    <div class="button" data-filter=".sort-value-02">JAVASCRIPT</div>#}

@@ -1,8 +1,13 @@
 from django.db import models
 from django.utils import timezone
 from django.shortcuts import reverse
-
 from django.utils.translation import ugettext as _
+
+
+#TODO:
+# - Category image 
+# - Post image
+# - Fat Models, thin View, stupid Template!
 
 
 class Category(models.Model):
@@ -13,7 +18,7 @@ class Category(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return '{}'.format(self.title)
+        return 'f{self.title}'
 
     class Meta:
         verbose_name = 'Категория'
@@ -25,10 +30,14 @@ class Tag(models.Model):
     slug = models.SlugField(max_length=50, unique=True)
 
     def __str__(self):
-        return '{}'.format(self.title)
+        return 'f{self.title}'
     
     def get_absolute_url(self):
         return reverse(kwargs={"slug": self.slug})
+    
+    class Meta:
+        verbose_name = 'Тэг'
+        verbose_name_plural = 'Тэги'
 
 
 class Post(models.Model):
@@ -43,17 +52,24 @@ class Post(models.Model):
     updated = models.DateTimeField(auto_now=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     description = models.CharField('Краткое описание', max_length=250, blank=True)
-    image = models.ImageField(upload_to='static/images/custom', null=True, blank=True)
+    
+    #!!!!
+    img = models.VersatileImageField(upload_to='media/images', 
+                      height_field='height', 
+                      width_field='width',
+                      blank=True, 
+                      db_index=True,
+                      verbose_name=_('Image'))
+
 
     def __str__(self):
-        return '{}'.format(self.title)
+        return 'f{self.title}'
 
     def publish(self):
         self.published_date = timezone.now()
         self.save()
 
     def get_absolute_url(self):
-        # return "/%i/" % self.id
         return reverse('blog:post-detail', kwargs={"slug": self.slug})
 
     class Meta:
@@ -74,7 +90,7 @@ class Comment(models.Model):
         self.save
 
     def __str__(self):
-        return '{}'.format(self.text)
+        return 'f{self.text}'
 
     class Meta:
         verbose_name = 'Комментарий'
