@@ -54,9 +54,7 @@ class Post(models.Model):
     description = models.CharField('Краткое описание', max_length=250, blank=True)
     
     #!!!!
-    img = models.VersatileImageField(upload_to='media/images', 
-                      height_field='height', 
-                      width_field='width',
+    img = models.ImageField(upload_to='media/images', 
                       blank=True, 
                       db_index=True,
                       verbose_name=_('Image'))
