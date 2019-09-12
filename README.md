@@ -11,13 +11,9 @@ Website building with Django framework
 - $ pip install -r requirements.txt
 
 ![Index Page](media/images/1.png)
-Format: ![Alt Text](url)
 
 ![Post Page](media/images/2.png)
-Format: ![Alt Text](url)
 
 ![Admin Page](media/images/4.png)
-Format: ![Alt Text](url)
 
 ![Visual editor](media/images/6.png)
-Format: ![Alt Text](url)
