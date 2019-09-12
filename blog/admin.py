@@ -1,6 +1,7 @@
 from django.contrib import admin
-
 from .models import Category, Post, Tag, Comment
+from django_summernote.admin import SummernoteModelAdmin
+from django.utils.html import format_html
 
 
 @admin.register(Category)
@@ -13,9 +14,12 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 @admin.register(Post)
-class PostAdmin(admin.ModelAdmin):
-    list_display = ['title', 'category', 'description','text', 'slug', 'published_date', 'publishTrue']
+class PostAdmin(SummernoteModelAdmin):
+    list_display = ['title', 'category', 'description', 'img', 'text', 'slug', 'published_date', 'publishTrue']
+    list_filter = ('publishTrue', 'published_date', 'category')
     prepopulated_fields = {'slug': ('title',)}
+    summernote_fields = ('text',)
+
 
     class Meta:
         model = Post
@@ -36,3 +40,4 @@ class CommentAdmin(admin.ModelAdmin):
 
     class Meta:
         model = Comment
+        

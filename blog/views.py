@@ -28,6 +28,8 @@ class PostsListView(ListView):
 
 class PostDetailView(DetailView):
     model = Post
+    context_object_name = 'post'
+    template_name = 'blog/post_detail.html'
 
     def get_object(self, queryset=None):
         slug_ = self.kwargs.get("slug")

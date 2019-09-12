@@ -5,6 +5,7 @@ from django.utils.translation import ugettext as _
 
 
 #TODO:
+#   Image - отдельная модель многие ко многим(?)
 # - Category image 
 # - Post image
 # - Fat Models, thin View, stupid Template!
@@ -18,7 +19,7 @@ class Category(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return 'f{self.title}'
+        return '{}'.format(self.title)
 
     class Meta:
         verbose_name = 'Категория'
@@ -30,7 +31,7 @@ class Tag(models.Model):
     slug = models.SlugField(max_length=50, unique=True)
 
     def __str__(self):
-        return 'f{self.title}'
+        return '{}'.format(self.title)
     
     def get_absolute_url(self):
         return reverse(kwargs={"slug": self.slug})
@@ -53,15 +54,16 @@ class Post(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     description = models.CharField('Краткое описание', max_length=250, blank=True)
     
-    #!!!!
+    #!Изображение сохраняется, 
+    #нужно вывести -> views 
+    #и thumbnail -> admin
     img = models.ImageField(upload_to='media/images', 
                       blank=True, 
                       db_index=True,
                       verbose_name=_('Image'))
 
-
     def __str__(self):
-        return 'f{self.title}'
+        return '{}'.format(self.title)
 
     def publish(self):
         self.published_date = timezone.now()
@@ -88,11 +90,15 @@ class Comment(models.Model):
         self.save
 
     def __str__(self):
-        return 'f{self.text}'
+        return '{}'.format(self.text)
 
     class Meta:
         verbose_name = 'Комментарий'
         verbose_name_plural = 'Комментарии'
+
+
+class Image(models.Model):
+    name = models.CharField('Тайтл', max_length=25, unique=True)
 
 
 class Sort(models.Model):
@@ -101,3 +107,5 @@ class Sort(models.Model):
 
 class Search(models.Model):
     pass
+
+

@@ -4,7 +4,7 @@
 <div id="tt-pageContent">
     <div class="container-indent">
         <div class="container">
-            <h1 class="tt-title-subpages noborder">THE BLOG</h1>
+            <h1 class="tt-title-subpages noborder">Python Daily Journal</h1>
             <div class="tt-blog-masonry">
                 <div class="tt-filter-nav">
 
@@ -16,15 +16,10 @@
                            href="{% url 'blog:posts-list' tag.slug %}">{{ tag|upper }}</a>
                     {% endfor %}
                     
-{#                    <div class="button active" data-filter="*">ALL</div>#}
-{#                    <div class="button" data-filter=".sort-value-01">PYTHON</div>#}
-{#                    <div class="button" data-filter=".sort-value-02">JAVASCRIPT</div>#}
-{#                    <div class="button" data-filter=".sort-value-03">PHP </div>#}
-{#                    <div class="button" data-filter=".sort-value-04">HTML &amp; CSS</div>#}
                 </div>
         <div class="tt-blog-init tt-grid-col-3 tt-layout-01-post tt-add-item">
             {% for post in posts %}
-                    <div class="element-item sort-value-01">
+                    <div class="element-item">
                         <div class="tt-post">
                             <div class="tt-post-img">
                                 <a href="{{ post.get_absolute_url }}">
@@ -34,12 +29,13 @@
                             <div class="tt-post-content">
                                 <div class="tt-background"></div>
                                 <div class="tt-tag">
-                                    <!-- {% for tag in post.tags.all %}<a href="/tag/{{tag.id}}"> {{tag}}</a>{% if not forloop.last %}, {% endif %}{% endfor %} -->
+                                    {% for tag in post.tags.all %}<a href="/tag/{{tag.id}}"> {{tag}}</a>{% if not forloop.last %}, {% endif %}{% endfor %}
                                 </div>
                                     <h2 class="tt-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
                                 <div class="tt-description">{{ post.description }}</div>
                                 <div class="tt-meta">
                                     <div class="tt-autor">{{ post.created }}</div>
+                                
                                     <div class="tt-comments"><a href="#"><i class="tt-icon icon-f-88"></i>7</a></div>
                                 </div>
                             </div>

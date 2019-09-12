@@ -46,9 +46,24 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+
     'debug_toolbar',
+    'django_summernote',
     'versatileimagefield',
     'blog',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.instagram',
+    'allauth.socialaccount.providers.linkedin',
+    'allauth.socialaccount.providers.pinterest',
+    'allauth.socialaccount.providers.slack',
+    'allauth.socialaccount.providers.soundcloud',
+    'allauth.socialaccount.providers.twitter',
 ]
 
 MIDDLEWARE = [
@@ -112,6 +127,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
@@ -134,4 +155,32 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 
-MEDIA_DIR = [os.path.join(BASE_DIR, 'media'),]
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+SUMMERNOTE_THEME = 'bs4'
+SUMMERNOTE_CONFIG = {
+    'summernote': {
+        'width': '800px',
+        'height': '400px',
+        'toolbar': [
+            ['style', ['style']],
+            ['font', ['bold', 'italic', 'clear', ]],
+            ['color', ['forecolor', 'backcolor', ]],
+            ['misc', ['picture', 'fullscreen', 'codeview', 'print', 'help', ]],
+        ],
+    },
+    'css': (
+        '//cdnjs.cloudflare.com/ajax/libs/codemirror/5.40.0/theme/base16-dark.min.css',
+    ),
+    'css_for_inplace': (
+        '//cdnjs.cloudflare.com/ajax/libs/codemirror/5.40.0/theme/base16-dark.min.css',
+    ),
+    'codemirror': {
+        'theme': 'base16-dark',
+        'mode': 'htmlmixed',
+        'lineNumbers': 'true',
+    },
+    'lazy': False,
+}
