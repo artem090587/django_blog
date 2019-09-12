@@ -61,7 +61,9 @@
             <div class="tt-header-holder">
                 <div class="tt-col-obj tt-obj-logo">
                     <!-- logo -->
-                    <a class="tt-logo tt-logo-alignment" href="/"><img src="{% static 'images/logo.png' %}" alt=""></a>
+                    <a class="tt-logo {% if view.kwargs.slug == 'all' %} tt-logo-alignment {% endif %}" href="{% url 'blog:posts-list' 'all' %}">
+                        <img src="{% static 'images/logo.png' %}" alt="">
+                    </a>
                     <!-- /logo -->
                 </div>
                 <div class="tt-col-obj tt-obj-menu">

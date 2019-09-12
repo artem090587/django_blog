@@ -21,10 +21,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '48yg0=30cye^frbbv#_$u^_5vsa7rp_!-m5r0agi94^8r))a&e'
+# SECRET_KEY = '48yg0=30cye^frbbv#_$u^_5vsa7rp_!-m5r0agi94^8r))a&e'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+
+DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
 ALLOWED_HOSTS = []
 
@@ -52,19 +55,15 @@ INSTALLED_APPS = [
     'django_summernote',
     'versatileimagefield',
     'blog',
+
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.github',
     'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.instagram',
-    'allauth.socialaccount.providers.linkedin',
-    'allauth.socialaccount.providers.pinterest',
-    'allauth.socialaccount.providers.slack',
-    'allauth.socialaccount.providers.soundcloud',
-    'allauth.socialaccount.providers.twitter',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -129,7 +128,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
-    # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 
