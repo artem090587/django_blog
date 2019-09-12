@@ -9,6 +9,7 @@ Website building with Django framework
 - $ virtualenv -p python3 venv
 - $ source bin/activate
 - $ pip install -r requirements.txt
+- $ python manage.py runserver
 
 ![Index Page](media/images/1.png)
 
