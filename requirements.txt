@@ -1,4 +1,4 @@
-Django==2.1.7
+django>=2.2.10
 pytz==2018.9
 certifi==2019.6.16
 django-allauth==0.40.0
